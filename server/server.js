@@ -1,5 +1,6 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var path = require('path');
 
 var app = module.exports = loopback();
 
@@ -15,6 +16,10 @@ app.start = function() {
     }
   });
 };
+
+app.get('/',function(req,res){
+  res.sendFile(path.resolve('../clients/') + 'index.html');
+});
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
