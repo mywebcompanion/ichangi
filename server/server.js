@@ -1,6 +1,7 @@
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 
@@ -16,7 +17,9 @@ app.start = function() {
     }
   });
 };
-
+app.use(bodyParser.urlencoded({extended : false}));
+app.use(bodyParser.json());
+app.use(cors());
 app.get('/',function(req,res){
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
