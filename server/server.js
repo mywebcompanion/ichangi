@@ -18,7 +18,7 @@ app.start = function() {
 };
 
 app.get('/',function(req,res){
-  res.sendFile(path.resolve('../clients/') + '/index.html');
+  res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
 
 // Bootstrap the application, configure models, datasources and middleware.
