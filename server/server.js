@@ -19,7 +19,6 @@ app.start = function() {
 };
 app.use(bodyParser.urlencoded({extended : false}));
 app.use(bodyParser.json());
-app.use(cors());
 app.get('/',function(req,res){
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
