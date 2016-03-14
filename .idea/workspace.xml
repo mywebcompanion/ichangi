@@ -110,8 +110,8 @@
       <file leaf-file-name="shop-ui-add-to-cart.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/shop-ui-add-to-cart.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6311031" vertical-offset="14237" max-vertical-offset="14790">
-              <caret line="858" column="18" selection-start-line="858" selection-start-column="18" selection-end-line="858" selection-end-column="18" />
+            <state vertical-scroll-proportion="25.453888" vertical-offset="357" max-vertical-offset="14790">
+              <caret line="849" column="36" selection-start-line="849" selection-start-column="36" selection-end-line="849" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -559,8 +559,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/shop-ui-add-to-cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6311031" vertical-offset="14237" max-vertical-offset="14790">
-          <caret line="858" column="18" selection-start-line="858" selection-start-column="18" selection-end-line="858" selection-end-column="18" />
+        <state vertical-scroll-proportion="25.453888" vertical-offset="357" max-vertical-offset="14790">
+          <caret line="849" column="36" selection-start-line="849" selection-start-column="36" selection-end-line="849" selection-end-column="36" />
           <folding />
         </state>
       </provider>
