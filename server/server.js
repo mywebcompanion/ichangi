@@ -59,7 +59,7 @@ app.get('/sendsms', function(req,res){
     client.messages.create({
       to : obj.number,
       from: "+13156460222",
-      body: "Dear " + obj.name + ", Great change to become a changi millionaire. complete your pending duty free shopping cart and participate ! . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html"
+      body: "Dear " + obj.name + ", Great chance to become a changi millionaire. complete your pending duty free shopping cart and participate! . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html"
     }, function(err, message) {
     if(!err)
       console.log(message.sid);
