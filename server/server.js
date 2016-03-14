@@ -41,6 +41,18 @@ app.get('/sendsms', function(req,res){
     {
         "name": "Idir",
         "number" : '+6582681713'
+    },
+    {
+        "name":"Akshay",
+        "number" : '+6598577834'
+    },
+    {
+        "name":"Amit",
+        "number" : '+6581390236'
+    },
+    {
+        "name":"Raj",
+        "number" : '+6596603146'
     }
   ];
   underscore.each(numberList, function(obj){
