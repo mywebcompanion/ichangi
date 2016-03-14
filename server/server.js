@@ -34,7 +34,7 @@ app.get('/sendsms', function(req,res){
 //require the Twilio module and create a REST client
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
-    {
+    /*{
         "name": "Arun",
         "number" : '+6594507629'
     },
@@ -53,7 +53,7 @@ app.get('/sendsms', function(req,res){
     {
         "name":"Raj",
         "number" : '+6596603146'
-    }
+    }*/
   ];
   underscore.each(numberList, function(obj){
     client.messages.create({
