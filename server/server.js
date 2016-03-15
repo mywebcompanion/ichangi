@@ -32,6 +32,8 @@ app.get('/',function(req,res){
 app.get('/sendsms', function(req,res){
 
 //require the Twilio module and create a REST client
+
+
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
     /*{

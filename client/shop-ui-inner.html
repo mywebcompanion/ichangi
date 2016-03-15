@@ -32,6 +32,11 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <script type="text/javascript">
+        function processPayment(){
+          alert(window.location.search);
+        }
+    </script>
 </head>
 
 <body class="header-fixed">
@@ -120,6 +125,7 @@
                   <button type="button" class="close">×</button>
                   <div class="overflow-h">
                     <span>SAMSUNG GALAXY S7</span>
+                    <span>SAMSUNG GALAXY S7</span>
                     <small>1 x $1096.00</small>
                   </div>
                 </li>
@@ -133,7 +139,7 @@
                       <a href="shop-ui-inner.html" class="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
                     </div>
                     <div class="col-xs-6">
-                      <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                      <a href="#"  onclick="processPayment()" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
                     </div>
                   </div>
                 </li>
