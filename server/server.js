@@ -33,9 +33,11 @@ app.get('/',function(req,res){
 
 function callback(error, response, body) {
   if (!error && response.statusCode == 200) {
+    console.log("All is well");
     var info = JSON.parse(body);
   }
   else{
+    console.log("Error");
     console.log(error);
   }
 }
@@ -44,53 +46,55 @@ app.get('/sendsms', function(req,res){
 
 //require the Twilio module and create a REST client
   var email = req.query.Email;
-  var options = {
-    url: config.silverpop.dbendpoint,
-    formData : {
-      Email: email,
-      COLUMN7 : 'no'
-    },
-    method: 'POST',
-    headers : {}
-  };
+
   var authFormData = {
     grant_type : config.silverpop.grant_type,
     client_id : config.silverpop.clientid,
     client_secret : config.silverpop.secret,
     refresh_token : config.silverpop.refresh
   };
-
-  request.post({url:config.silverpop.authurl, formData: authFormData}, function optionalCallback(err, httpResponse, body) {
-    if (err) {
-      return console.error('upload failed:', err);
-    }
-    var access_token = body.access_token;
-    options.headers.Authorization = access_token;
-    request(options, callback);
-  });
-
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
     {
-        "name": "Arun",
-        "number" : '+6594507629'
-    }/*,
-    {
-        "name": "Idir",
-        "number" : '+6582681713'
+      "name": "Arun",
+      "number" : '+6594507629'
     },
-    {
-        "name":"Akshay",
-        "number" : '+6598577834'
-    },
-    {
-        "name":"Amit",
-        "number" : '+6581390236'
-    },
-    {
-        "name":"Raj",
-        "number" : '+6596603146'
-    }*/
+     {
+     "name": "Idir",
+     "number" : '+6582681713'
+     },
+     {
+     "name":"Akshay",
+     "number" : '+6598577834'
+     },
+     {
+     "name":"Amit",
+     "number" : '+6581390236'
+     },
+     {
+     "name":"Raj",
+     "number" : '+6596603146'
+     },
+     {
+      "name" : "Rajesh Iyer",
+      "number" : "+6591074733"
+     },
+     {
+      "name" : "Dan",
+      "number" : "+6593885916"
+     },
+     {
+      "name" : "Dipak",
+      "number" : "+6594576397"
+     },
+     {
+      "name" : "Venkat",
+       "number": "+6596821535"
+     },
+      {
+        "name" : "Raghav",
+        "number" : "+6594859010"
+      }
   ];
   underscore.each(numberList, function(obj){
     client.messages.create({
@@ -98,10 +102,34 @@ app.get('/sendsms', function(req,res){
       from: "+13156460222",
       body: "Dear " + obj.name + ", Great chance to become a changi millionaire. complete your pending duty free shopping cart and participate! . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html"
     }, function(err, message) {
-    if(!err)
-      console.log(message.sid);
-    else
-      console.log(err);
+      if(!err)
+        console.log(message.sid);
+      else
+        console.log(err);
+    });
+  });
+
+  request.post({url:config.silverpop.authurl, formData: authFormData}, function optionalCallback(err, httpResponse, body) {
+    if (err) {
+      return console.error('upload failed:', err);
+    }
+    request({
+      url : config.silverpop.dbendpoint,
+      formData : {
+        Email: email,
+        COLUMN7 : 'no'
+      },
+      headers: {
+        'Authorization': body.access_token
+      },
+      method : 'POST'
+    },function(err, httpResponse, body){
+      if (err) {
+        console.error('upload failed:', err);
+      }
+      else{
+        console.log("Hey all ok" + body);
+      }
     });
   });
 });
