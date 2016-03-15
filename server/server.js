@@ -71,10 +71,10 @@ app.get('/sendsms', function(req,res){
 
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
-    /*{
+    {
         "name": "Arun",
         "number" : '+6594507629'
-    },
+    }/*,
     {
         "name": "Idir",
         "number" : '+6582681713'
@@ -104,7 +104,6 @@ app.get('/sendsms', function(req,res){
       console.log(err);
     });
   });
-
 });
 
 // Bootstrap the application, configure models, datasources and middleware.
