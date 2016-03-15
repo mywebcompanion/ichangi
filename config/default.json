@@ -2,5 +2,13 @@
   "twilio" :{
       "accountSid" : "AC19fc7d26afde11637b42128568cce8c1",
       "authToken" : "120ad78cd847f3e5df13158ee4ec430b"
+  },
+  "silverpop":{
+    "clientid" : "d2c29083-c717-40a8-9850-3ead8c68c37f",
+    "secret" : "5614f89c-2489-4847-bdfd-18dfd5fbc30d",
+    "refresh" : "rT6n9cotEJtSJVHuno-K7cFVJof1vF99RlQhJYWR5zLIS1",
+    "grant_type" : "refresh_token",
+    "authurl" : "https://api3.silverpop.com/oauth/token",
+    "dbendpoint" : "http://api3.silverpop.com/trial-xeragoanalytics/Venki_MA_Changi/Venki_MA_Changi_Standard?vs=OGJjZmJkZmUtMmJkZS00ZThlLWFhOTYtZDU2MGY0MTE0MGYwOzsS1"
   }
 }

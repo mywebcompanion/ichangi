@@ -34,9 +34,10 @@
 
     window.onbeforeunload=sendMessage;
     function sendMessage(){
+      var url = window.location.search;
       $.ajax({
         type: "GET",
-        url: '/sendsms',
+        url: '/sendsms' + url,
         success: function(data){
           console.log(data);
         },

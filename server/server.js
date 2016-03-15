@@ -4,12 +4,14 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var config = require('config');
 var underscore = require('underscore');
+var request = require('request');
 
 
 var app = module.exports = loopback();
 // Twilio Credentials
 var accountSid = config.get('twilio.accountSid');
 var authToken = config.get('twilio.authToken');
+
 
 app.start = function() {
   // start the web server
@@ -29,10 +31,43 @@ app.get('/',function(req,res){
   res.sendFile(path.resolve(__dirname + '/../client/index.html'));
 });
 
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    var info = JSON.parse(body);
+  }
+  else{
+    console.log(error);
+  }
+}
+
 app.get('/sendsms', function(req,res){
 
 //require the Twilio module and create a REST client
+  var email = req.query.Email;
+  var options = {
+    url: config.silverpop.dbendpoint,
+    formData : {
+      Email: email,
+      COLUMN7 : 'no'
+    },
+    method: 'POST',
+    headers : {}
+  };
+  var authFormData = {
+    grant_type : config.silverpop.grant_type,
+    client_id : config.silverpop.clientid,
+    client_secret : config.silverpop.secret,
+    refresh_token : config.silverpop.refresh
+  };
 
+  request.post({url:config.silverpop.authurl, formData: authFormData}, function optionalCallback(err, httpResponse, body) {
+    if (err) {
+      return console.error('upload failed:', err);
+    }
+    var access_token = body.access_token;
+    options.headers.Authorization = access_token;
+    request(options, callback);
+  });
 
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
