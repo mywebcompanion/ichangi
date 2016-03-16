@@ -55,7 +55,7 @@ app.get('/sendsms', function(req,res){
   };
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
-    {
+    /*{
       "name": "Arun",
       "number" : '+6594507629'
     },
@@ -94,7 +94,7 @@ app.get('/sendsms', function(req,res){
       {
         "name" : "Raghav",
         "number" : "+6594859010"
-      }
+      }*/
   ];
   underscore.each(numberList, function(obj){
     client.messages.create({
