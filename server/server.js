@@ -6,7 +6,6 @@ var config = require('config');
 var underscore = require('underscore');
 var request = require('request');
 
-
 var app = module.exports = loopback();
 // Twilio Credentials
 var accountSid = config.get('twilio.accountSid');
@@ -46,6 +45,7 @@ app.get('/sendsms', function(req,res){
 
 //require the Twilio module and create a REST client
   var email = req.query.Email;
+  console.log("Email");
 
   var authFormData = {
     grant_type : config.silverpop.grant_type,
@@ -55,15 +55,15 @@ app.get('/sendsms', function(req,res){
   };
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
-    /*{
+    {
       "name": "Arun",
       "number" : '+6594507629'
     },
      {
      "name": "Idir",
      "number" : '+6582681713'
-     },
-     {
+     }
+     /*{
      "name":"Akshay",
      "number" : '+6598577834'
      },
@@ -120,7 +120,8 @@ app.get('/sendsms', function(req,res){
         COLUMN7 : 'no'
       },
       headers: {
-        'Authorization': body.access_token
+        'Authorization': body.access_token,
+        "Content-Type": "text/xml"
       },
       method : 'POST'
     },function(err, httpResponse, body){

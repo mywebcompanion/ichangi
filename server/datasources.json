@@ -4,10 +4,6 @@
     "connector": "memory"
   },
   "mongodb": {
-    "port": 47325,
-    "url": "mongodb://csc:csc@ds011248.mlab.com:11248/ichangi-demo",
-    "database": "ichangi-demo",
-    "name": "mongodb",
-    "connector": "mongodb"
+
   }
 }
