@@ -55,13 +55,17 @@ app.get('/sendsms', function(req,res){
   };
   var client = require('twilio')(accountSid, authToken);
   var numberList = [
-    {
-      "name": "Arun",
-      "number" : '+6594507629'
-    },
+      {
+        "name": "Arun",
+        "number" : '+6594507629'
+      },
      {
-     "name": "Idir",
-     "number" : '+6582681713'
+        "name": "Idir",
+        "number" : '+6582681713'
+     },
+     {
+        "name" : "Dan",
+        "number" : "+6593885916"
      }
      /*{
      "name":"Akshay",
@@ -78,10 +82,6 @@ app.get('/sendsms', function(req,res){
      {
       "name" : "Rajesh Iyer",
       "number" : "+6591074733"
-     },
-     {
-      "name" : "Dan",
-      "number" : "+6593885916"
      },
      {
       "name" : "Dipak",
