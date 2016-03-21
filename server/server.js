@@ -62,7 +62,8 @@ app.get('/sendsms', function(req,res){
       {
         "name": "Idir",
         "number" : '+6582681713'
-      },
+      }
+    /*,
       {
         "name" : "Dan",
         "number" : "+6593885916"
@@ -87,6 +88,7 @@ app.get('/sendsms', function(req,res){
         "name" : "Joe",
         "number" : "+6596307235"
       }
+      */
   ];
 
   underscore.each(numberList, function(obj){
