@@ -103,7 +103,7 @@ app.get('/sendsms', function(req,res){
     client.messages.create({
       to : obj.number,
       from: "+13156460222",
-      body: "Dear " + obj.name + ", complete your pending duty free shopping cart and get a chance to be a changi millionaire : . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html .  Share with #iShopiSave and get an extra lucky draw chance"
+      body: "Dear " + obj.name + ", complete your pending duty free shopping cart and get a chance to be a changi millionaire : http://ichangi.herokuapp.com/shop-ui-add-to-cart.html .  Share with #iShopiSave and get an extra lucky draw chance"
     }, function(err, message) {
       if(!err)
         console.log(message.sid);
