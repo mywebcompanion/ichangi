@@ -82,6 +82,10 @@ app.get('/sendsms', function(req,res){
       {
           "name" : "Rajesh Iyer",
           "number" : "+6591074733"
+      },
+      {
+        "name" : "Joe",
+        "number" : "+6596307235"
       }
   ];
 
