@@ -62,41 +62,27 @@ app.get('/sendsms', function(req,res){
       {
         "name": "Idir",
         "number" : '+6582681713'
-      }
-     /*
-      ,
-      {
-      "name" : "Dan",
-      "number" : "+6593885916"
       },
       {
-     "name":"Akshay",
-     "number" : '+6598577834'
-     },
-     {
-     "name":"Amit",
-     "number" : '+6581390236'
-     },
-     {
-     "name":"Raj",
-     "number" : '+6596603146'
-     },
-     {
-      "name" : "Rajesh Iyer",
-      "number" : "+6591074733"
-     },
-     {
-      "name" : "Dipak",
-      "number" : "+6594576397"
-     },
-     {
-      "name" : "Venkat",
-       "number": "+6596821535"
-     },
+        "name" : "Dan",
+        "number" : "+6593885916"
+      },
       {
-        "name" : "Raghav",
-        "number" : "+6594859010"
-      }*/
+         "name":"Akshay",
+         "number" : '+6598577834'
+      },
+      {
+         "name":"Amit",
+         "number" : '+6581390236'
+      },
+      {
+         "name":"Raj",
+         "number" : '+6596603146'
+      },
+      {
+          "name" : "Rajesh Iyer",
+          "number" : "+6591074733"
+      }
   ];
 
   underscore.each(numberList, function(obj){
