@@ -59,15 +59,17 @@ app.get('/sendsms', function(req,res){
         "name": "Arun",
         "number" : '+6594507629'
       },
-     {
+      {
         "name": "Idir",
         "number" : '+6582681713'
-     },
-     {
-        "name" : "Dan",
-        "number" : "+6593885916"
-     }
-     /*{
+      }
+     /*
+      ,
+      {
+      "name" : "Dan",
+      "number" : "+6593885916"
+      },
+      {
      "name":"Akshay",
      "number" : '+6598577834'
      },
@@ -96,11 +98,12 @@ app.get('/sendsms', function(req,res){
         "number" : "+6594859010"
       }*/
   ];
+
   underscore.each(numberList, function(obj){
     client.messages.create({
       to : obj.number,
       from: "+13156460222",
-      body: "Dear " + obj.name + ", Great chance to become a changi millionaire. complete your pending duty free shopping cart and participate! . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html"
+      body: "Dear " + obj.name + ", complete your pending duty free shopping cart and get a chance to be a changi millionaire : . http://ichangi.herokuapp.com/shop-ui-add-to-cart.html .  Share with #iShopiSave and get an extra lucky draw chance"
     }, function(err, message) {
       if(!err)
         console.log(message.sid);
